@@ -1,0 +1,8 @@
+package:
+  name: sample
+  version: 1.0.0
+source:
+  path: ..
+build:  
+  missing_dso_whitelist:
+    - "bin/*"

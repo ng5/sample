@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.29)
+project(sample)
+if(MSVC)
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
+endif()
+set(CMAKE_CXX_STANDARD 23)
+include_directories(${CMAKE_SOURCE_DIR}/include)
+add_library(sample SHARED src/library.cpp)
+
+add_executable(test tests/test.cpp)
+target_link_libraries(test sample)
